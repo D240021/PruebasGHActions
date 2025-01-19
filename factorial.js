@@ -4,3 +4,4 @@ function obtenerFactorial( numero ) {
 
 module.exports = { obtenerFactorial };
 
+
