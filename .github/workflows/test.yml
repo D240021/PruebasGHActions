@@ -25,6 +25,9 @@ jobs:
       with:
         node-version: 16  
 
+    - name: Set permisses
+      run: chmod -R 755 .   
+        
     - name: Install Jest    
       run: npm install --save-dev jest
 
