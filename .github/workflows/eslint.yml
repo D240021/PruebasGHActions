@@ -21,6 +21,9 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v3
 
+    - name: Set permisses
+      run: chmod -R 755 . 
+        
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
