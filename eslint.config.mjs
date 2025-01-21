@@ -3,13 +3,10 @@ import pluginJs from '@eslint/js'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.jest  
-      }
-    }
-  },
-  pluginJs.configs.recommended
+  { languageOptions: { globals: globals.browser } },
+  {"env": {
+    "jest/globals": true
+  } }, 
+  pluginJs.configs.recommended,
 ]
+
