@@ -1,12 +1,10 @@
-name: Pruebas GH Actions
+name: Tests Suite
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   test:
@@ -14,25 +12,26 @@ jobs:
 
     strategy:
       matrix:
-        node-version : [18.x, 20.x, 22.x]
+        node-version: [18.x, 20.x, 22.x]
 
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-    - name: Set up Node.js
+    - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
-        node-version: 16  
+        node-version: ${{ matrix.node-version }}
 
-    - name: Set permisses
+    - name: Set permissions
       run: chmod -R 755 .   
         
-    - name: Install Jest    
-      run: npm install --save-dev jest
-
     - name: Install dependencies
-      run: npm install
+      run: |
+        npm install --save-dev jest
+        npm install
 
     - name: Run tests
-      run: npm test
+      id: tests
+      run: |
+        npm test
+        echo "::set-output name=status::success"
