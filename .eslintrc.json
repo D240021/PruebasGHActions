@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "standard",
+    "plugin:jest/recommended"  // Aseguramos que las reglas de Jest se incluyan
+  ],
+  "env": {
+    "jest": true,  // Definir el entorno de Jest
+    "browser": true  // Definir el entorno de navegador
+  },
+  "rules": {
+    "no-undef": "off"  // Desactivar la regla no-undef para evitar conflictos con Jest
+  }
+}
