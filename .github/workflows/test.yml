@@ -12,6 +12,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version : [18.x, 20.x, 22.x]
+
     steps:
     - name: Check out code
       uses: actions/checkout@v2
@@ -21,6 +25,9 @@ jobs:
       with:
         node-version: 16  
 
+    - name: Set permisses
+      run: chmod -R 755 .   
+        
     - name: Install Jest    
       run: npm install --save-dev jest
 
