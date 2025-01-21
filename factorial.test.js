@@ -22,6 +22,6 @@ describe('Pruebas para la función obtenerFactorial', () => {
   })
 
   // test('Factorial de 5 debe ser incorrecto deliberadamente', () => {
-    // expect(obtenerFactorial(5)).toBe(100)
+  // expect(obtenerFactorial(5)).toBe(100)
   // })
 })
