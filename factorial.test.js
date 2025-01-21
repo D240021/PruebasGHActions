@@ -29,9 +29,9 @@ describe('Pruebas para la función obtenerFactorial', () => {
 
   // Prueba incorrecta deliberadamente
   // eslint-disable-next-line no-undef
-  test('Factorial de 5 debe ser incorrecto deliberadamente', () => {
-    expect(obtenerFactorial(5)).toBe(100);
-  });
+  //test('Factorial de 5 debe ser incorrecto deliberadamente', () => {
+    //expect(obtenerFactorial(5)).toBe(100);
+  //});
 
   // eslint-disable-next-line no-undef
   test('Factorial de números negativos debe ser 1', () => {
