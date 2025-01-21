@@ -28,15 +28,16 @@ describe('Pruebas para la función obtenerFactorial', () => {
   })
 
 
-test('Factorial de 5 debe ser incorrecto deliberadamente', () => {
-          expect(obtenerFactorial(5)).toBe(100); 
+  test('Factorial de 5 debe ser incorrecto deliberadamente', () => {
+            expect(obtenerFactorial(5)).toBe(100); 
+      });
+  });
+
+  test('Factorial de números negativos debe ser 1', () => {
+            expect(obtenerFactorial(-5)).toBe(1);
     });
-});
-
-test('Factorial de números negativos debe ser 1', () => {
-    expect(obtenerFactorial(-5)).toBe(1)
-})
-
+  });
+  
   // test('Factorial de 5 debe ser incorrecto deliberadamente', () => {
   //      expect(obtenerFactorial(5)).toBe(100);
   //  });
