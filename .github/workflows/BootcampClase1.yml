@@ -1,0 +1,15 @@
+name: BootcampClase1
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      name: Push realizado
+      -run: echo "Se realiza el push"
+      name: Deploy realizado
+      -run: echo "Se realiza deploy"
+      name: Proceso terminado
+      -run: echo "Se termina el proceso"
