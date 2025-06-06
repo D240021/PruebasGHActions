@@ -10,6 +10,13 @@ jobs:
         steps:
             - name: Primer paso (Saludo)
               run: echo "Hola, mundo"
+            
+            - name: Se establece valor de output
+              id: salida
+              run: echo "valorPrueba=Hola, mundo" >> $GITHUB_OUTPUT
+            
+            - name: Se obtiene valor del step anterior
+              run: echo "Mensaje de bienvenida = ${{ steps.salida.outputs.valorPrueba }}"
 
     segundo_job:
         runs-on: windows-latest
