@@ -26,6 +26,18 @@ jobs:
         steps:
             - name: Ejecutando después el primer job
               run: echo "Ejecutando después el primer job"
+
+    tercer_job:
+        runs-on: macos-latest
+
+        steps:
+            - name: Se crea variable de entorno a compartir
+              run: echo "valorEnv=Hola,env" >> $GITHUB_ENV
+
+            - name: Se obtiene valor de variable de entorno
+              run: echo "Valor de la variable de entorno = $GITHUB_ENV"
+
+          
     
 
 
