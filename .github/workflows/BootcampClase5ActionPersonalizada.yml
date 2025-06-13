@@ -14,6 +14,6 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Usar acción personalizada
-              uses: D240021/hola-mundo-por-daniel-barrantes@v1
+              uses: D240021/hola-mundo-action@v1
               with:
                 Destino-saludo: Daniel
