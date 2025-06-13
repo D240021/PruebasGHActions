@@ -1,0 +1,72 @@
+name: BootcampClase2Steps
+
+on: [push]
+
+jobs:
+
+    primer_job:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Primer paso (Saludo)
+              run: echo "Hola, mundo"
+            
+            - name: Se establece valor de output
+              id: salida
+              run: echo "valorPrueba=Hola, mundo" >> $GITHUB_OUTPUT
+            
+            - name: Se obtiene valor del step anterior
+              run: echo "Mensaje de bienvenida = ${{ steps.salida.outputs.valorPrueba }}"
+
+    segundo_job:
+        runs-on: windows-latest
+        
+        needs: primer_job
+
+        steps:
+            - name: Ejecutando después el primer job
+              run: echo "Ejecutando después el primer job"
+
+    tercer_job:
+        runs-on: macos-latest
+
+        steps:
+            - name: Se crea variable de entorno a compartir
+              run: echo "valorEnv=Hola,env" >> $GITHUB_ENV
+
+            - name: Se obtiene valor de variable de entorno
+              run: echo "Valor de la variable de entorno = $valorEnv"
+    
+    cuarto_job:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Se crea archivo
+              run: |
+                echo "Se crea el archivo" >> test.log
+            
+            - name: Se sube el artefacto
+              uses: actions/upload-artifact@v4
+              with:
+                name: archivoPrueba
+                path: test.log
+
+    quinto_job:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Se descarga el artefacto
+              uses: actions/download-artifact@v4
+              with:
+                name: archivoPrueba
+                
+            - name: Se muestra archivo
+              run: cat test.log
+
+                
+
+          
+    
+
+
+
