@@ -1,0 +1,19 @@
+name: BootcampClase5ActionPersonalizada
+
+on:
+    push
+
+jobs:
+
+    consumir-action:
+        runs-on: ubuntu-latest
+
+        steps:
+
+            - name: Usar checkout
+              uses: actions/checkout@v4
+
+            - name: Usar acción personalizada
+              uses: D240021/hola-mundo-por-daniel-barrantes@v1
+              with:
+                Destino-saludo: Daniel
